@@ -603,16 +603,11 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
 	},
-/obj/structure/table/reinforced,
-/obj/item/paper_bin,
+/obj/structure/closet/secure_closet/robotics,
 /obj/machinery/air_alarm{
-	desc = null;
-	pixel_y = 24
+	dir = 8;
+	pixel_x = 22
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 27
-	},
-/obj/item/pen,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "awS" = (
@@ -2093,8 +2088,7 @@
 /obj/machinery/disposal,
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/structure/disposalpipe/trunk{
 	dir = 8
@@ -2131,8 +2125,10 @@
 /turf/simulated/floor/tiled,
 /area/rnd/telescience_lab/foyer)
 "blx" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 5
+/obj/machinery/holopad,
+/obj/landmark/spawnpoint/job/roboticist,
+/obj/structure/bed/chair/office/dark{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/monotile,
 /area/assembly/robotics)
@@ -2689,13 +2685,13 @@
 /turf/simulated/floor/tiled/steel,
 /area/hallway/primary/surfacetwo)
 "bBV" = (
-/obj/machinery/optable{
-	name = "Robotics Operating Table"
-	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
 /obj/machinery/oxygen_pump/anesthetic{
 	pixel_y = -28
+	},
+/obj/machinery/optable{
+	name = "Robotics Operating Table"
 	},
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
@@ -3751,10 +3747,11 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 10
 	},
-/obj/machinery/newscaster{
-	pixel_x = -30
+/obj/machinery/r_n_d/circuit_imprinter,
+/obj/item/reagent_containers/glass/beaker/sulphuric,
+/obj/structure/reagent_dispensers/acid{
+	pixel_x = -32
 	},
-/obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "cpk" = (
@@ -5839,10 +5836,6 @@
 /area/crew_quarters/pool)
 "dGA" = (
 /obj/structure/table/reinforced,
-/obj/item/mmi,
-/obj/item/mmi/digital/posibrain,
-/obj/item/robotanalyzer,
-/obj/item/robotanalyzer,
 /obj/effect/floor_decal/borderfloor{
 	dir = 6
 	},
@@ -5853,7 +5846,12 @@
 	dir = 4;
 	pixel_x = 22
 	},
-/obj/item/book/manual/robotics_cyborgs,
+/obj/item/defib_kit/jumper_kit/loaded,
+/obj/item/storage/box/masks,
+/obj/item/storage/box/gloves{
+	pixel_x = 2;
+	pixel_y = 2
+	},
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "dHg" = (
@@ -6010,7 +6008,6 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/shuttle/hammerhead/general)
 "dLr" = (
-/obj/structure/filingcabinet/chestdrawer,
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -6023,6 +6020,7 @@
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 1
 	},
+/obj/structure/flora/pottedplant/orientaltree,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "dLN" = (
@@ -6749,7 +6747,7 @@
 /area/security/warden)
 "enX" = (
 /obj/structure/sign/department/morgue,
-/turf/simulated/wall/prepainted,
+/turf/simulated/wall/prepainted/science,
 /area/assembly/robotics)
 "eon" = (
 /obj/machinery/door/firedoor/glass,
@@ -6965,8 +6963,6 @@
 /obj/effect/floor_decal/corner/purple/bordercorner2{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/computer/med_data/laptop,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "ezu" = (
@@ -7993,11 +7989,6 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 4
 	},
-/obj/structure/table/reinforced,
-/obj/machinery/cell_charger{
-	pixel_y = 12
-	},
-/obj/machinery/cell_charger,
 /obj/machinery/button/remote/blast_door{
 	dir = 8;
 	id = "robotics_shutter_ext";
@@ -8012,7 +8003,7 @@
 	pixel_x = 24;
 	pixel_y = -8
 	},
-/obj/item/storage/single_use/med_pouch/trauma,
+/obj/structure/reagent_dispensers/fueltank,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "fff" = (
@@ -9589,8 +9580,7 @@
 "gkl" = (
 /obj/machinery/disposal,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/structure/window/reinforced,
 /obj/structure/disposalpipe/trunk{
@@ -10082,8 +10072,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack/cee{
 	dir = 1
@@ -10898,11 +10887,11 @@
 /turf/simulated/wall/prepainted,
 /area/crew_quarters/recreation_area)
 "gZt" = (
+/obj/machinery/cryopod/robot,
 /obj/machinery/firealarm{
-	dir = 8;
+	dir = 4;
 	pixel_x = 24
 	},
-/obj/machinery/cryopod/robot,
 /turf/simulated/floor/tiled/steel_ridged,
 /area/assembly/chargebay)
 "gZC" = (
@@ -12414,10 +12403,9 @@
 /turf/simulated/open,
 /area/maintenance/lower/medsec_maintenance)
 "hTW" = (
-/obj/structure/bed/chair/office/dark{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
 	},
-/obj/landmark/spawnpoint/job/roboticist,
 /turf/simulated/floor/tiled/monotile,
 /area/assembly/robotics)
 "hUf" = (
@@ -12895,23 +12883,14 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/medical/sleeper)
 "ihN" = (
-/obj/structure/table/reinforced,
-/obj/item/defib_kit/jumper_kit/loaded,
-/obj/item/storage/box/bodybags{
-	pixel_x = -2;
-	pixel_y = -2
-	},
-/obj/item/storage/box/masks,
-/obj/item/storage/box/gloves{
-	pixel_x = 2;
-	pixel_y = 2
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
 	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 10
 	},
+/obj/structure/closet/crate/biohazard,
+/obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "iiw" = (
@@ -13177,56 +13156,11 @@
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/showers)
 "ist" = (
-/obj/fiftyspawner/steel,
-/obj/fiftyspawner/steel,
-/obj/fiftyspawner/glass,
-/obj/fiftyspawner/glass,
-/obj/fiftyspawner/glass,
-/obj/fiftyspawner/glass,
-/obj/item/storage/firstaid{
-	empty = 1;
-	name = "first aid kit (empty)"
-	},
-/obj/item/storage/firstaid{
-	empty = 1;
-	name = "first aid kit (empty)"
-	},
-/obj/item/storage/firstaid{
-	empty = 1;
-	name = "first aid kit (empty)"
-	},
-/obj/item/storage/firstaid{
-	empty = 1;
-	name = "first aid kit (empty)"
-	},
-/obj/item/healthanalyzer,
-/obj/item/healthanalyzer,
-/obj/item/healthanalyzer,
-/obj/item/healthanalyzer,
-/obj/item/flash/synthetic,
-/obj/item/flash/synthetic,
-/obj/item/flash/synthetic,
-/obj/item/flash/synthetic,
-/obj/item/flash/synthetic,
-/obj/item/flash/synthetic,
-/obj/item/cell/high,
-/obj/item/cell/high,
-/obj/item/cell/high,
-/obj/item/cell/high,
-/obj/item/stack/cable_coil,
-/obj/item/stack/cable_coil,
-/obj/structure/closet/crate/science,
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/purple/border,
 /obj/machinery/power/apc{
 	pixel_y = -24
-	},
-/obj/fiftyspawner/steel,
-/obj/fiftyspawner/steel,
-/obj/fiftyspawner/steel,
-/obj/item/stack/material/plasteel{
-	amount = 10
 	},
 /obj/structure/cable/green{
 	icon_state = "0-4"
@@ -13873,8 +13807,7 @@
 /area/security/briefing_room)
 "iRD" = (
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/structure/window/reinforced{
 	dir = 1
@@ -18302,7 +18235,9 @@
 /turf/simulated/floor/tiled,
 /area/rnd/telescience_lab/foyer)
 "lBN" = (
-/obj/machinery/atmospherics/component/unary/vent_scrubber/on,
+/obj/machinery/atmospherics/component/unary/vent_scrubber/on{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/monotile,
 /area/assembly/robotics)
 "lBT" = (
@@ -20722,8 +20657,7 @@
 	},
 /obj/structure/window/reinforced,
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/effect/floor_decal/borderfloorblack/cee,
 /obj/item/ammo_magazine/m44,
@@ -21211,8 +21145,7 @@
 	pixel_x = 24;
 	pixel_y = 8
 	},
-/obj/effect/floor_decal/industrial/outline/yellow,
-/obj/structure/closet/crate/biohazard,
+/obj/structure/closet/crate/robotics,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "npm" = (
@@ -21551,9 +21484,6 @@
 /turf/simulated/floor/tiled,
 /area/security/briefing_room)
 "nyH" = (
-/obj/machinery/computer/transhuman/resleeving{
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
@@ -21566,6 +21496,9 @@
 /obj/structure/closet/hydrant{
 	dir = 8;
 	pixel_x = 32
+	},
+/obj/machinery/computer/transhuman/resleeving{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
@@ -23278,13 +23211,13 @@
 /turf/simulated/floor/tiled/steel,
 /area/rnd/research/researchdivision)
 "oHl" = (
-/obj/machinery/transhuman/synthprinter,
 /obj/effect/floor_decal/borderfloor{
 	dir = 5
 	},
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
 	},
+/obj/machinery/transhuman/synthprinter,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "oJr" = (
@@ -24455,34 +24388,14 @@
 /area/rift/stairwell/primary/surfacetwo)
 "pps" = (
 /obj/effect/floor_decal/borderfloor{
-	dir = 10
+	dir = 8
 	},
 /obj/effect/floor_decal/corner/purple/border{
-	dir = 10
+	dir = 8
 	},
-/obj/structure/table/rack/shelf,
-/obj/item/storage/belt/utility/full,
-/obj/item/storage/belt/utility/full,
-/obj/item/clothing/head/welding,
-/obj/item/clothing/head/welding,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/glasses/welding,
-/obj/item/clothing/glasses/omnihud/rnd,
-/obj/item/clothing/glasses/omnihud/rnd,
-/obj/item/storage/toolbox/electrical{
-	pixel_x = -2;
-	pixel_y = -2
+/obj/machinery/computer/mecha{
+	dir = 4
 	},
-/obj/item/storage/toolbox/mechanical{
-	pixel_x = 2;
-	pixel_y = 2
-	},
-/obj/item/multitool,
-/obj/item/multitool,
-/obj/item/flash,
-/obj/item/flash,
-/obj/item/flash,
-/obj/item/flash,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "ppI" = (
@@ -26592,8 +26505,7 @@
 /area/medical/medbay_primary_storage)
 "qNg" = (
 /obj/structure/window/reinforced{
-	dir = 8;
-	health = 1e+006
+	dir = 8
 	},
 /obj/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/manifold/visible/fuel,
@@ -29467,12 +29379,6 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/security/evastorage)
-"sEC" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
-	},
-/turf/simulated/floor/tiled/monotile,
-/area/assembly/robotics)
 "sEV" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
@@ -29528,16 +29434,13 @@
 /turf/simulated/open,
 /area/rift/station/public_garden/gantry)
 "sIo" = (
-/obj/machinery/transhuman/resleever,
 /obj/effect/floor_decal/borderfloor{
-	dir = 6
+	dir = 4
 	},
 /obj/effect/floor_decal/corner/purple/border{
-	dir = 6
+	dir = 4
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 27
-	},
+/obj/machinery/transhuman/resleever,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "sIy" = (
@@ -29859,13 +29762,13 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/hammerhead/cockpit)
 "sUU" = (
-/obj/structure/table/reinforced,
 /obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
+/obj/structure/table/reinforced,
 /obj/item/storage/toolbox/mechanical{
 	pixel_y = 6
 	},
 /obj/item/storage/firstaid/surgery,
-/obj/effect/floor_decal/corner/purple/border,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "sVH" = (
@@ -31926,11 +31829,6 @@
 /obj/structure/table/glass,
 /turf/simulated/floor/carpet/blue,
 /area/security/breakroom)
-"uqE" = (
-/obj/effect/floor_decal/borderfloor/corner,
-/obj/effect/floor_decal/corner/purple/bordercorner,
-/turf/simulated/floor/tiled/steel,
-/area/assembly/robotics)
 "urg" = (
 /obj/machinery/door/firedoor/glass{
 	dir = 4
@@ -33019,12 +32917,19 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 9
 	},
-/obj/structure/table/reinforced,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27
 	},
+/obj/structure/table/reinforced,
+/obj/item/storage/single_use/med_pouch/trauma,
+/obj/item/mmi,
+/obj/item/mmi,
+/obj/item/mmi,
 /obj/item/mmi/digital/posibrain,
 /obj/item/mmi/digital/posibrain,
+/obj/item/mmi/digital/posibrain,
+/obj/item/robotanalyzer,
+/obj/item/robotanalyzer,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "uXD" = (
@@ -33791,8 +33696,10 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced,
-/obj/item/mmi,
-/obj/item/mmi,
+/obj/machinery/cell_charger{
+	pixel_y = 12
+	},
+/obj/machinery/cell_charger,
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
 "vxs" = (
@@ -34763,11 +34670,11 @@
 /area/hallway/primary/surfacetwo)
 "wjQ" = (
 /obj/structure/bed/chair/comfy/beige,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -24
-	},
 /obj/landmark/spawnpoint/job/senior_researcher,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
 "wjW" = (
@@ -35302,10 +35209,11 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 8
 	},
-/obj/machinery/r_n_d/circuit_imprinter,
-/obj/item/reagent_containers/glass/beaker/sulphuric,
-/obj/structure/reagent_dispensers/acid{
-	pixel_x = -32
+/obj/machinery/newscaster{
+	pixel_x = -30
+	},
+/obj/machinery/computer/robotics{
+	dir = 4
 	},
 /turf/simulated/floor/tiled/steel,
 /area/assembly/robotics)
@@ -54596,7 +54504,7 @@ uNH
 hNS
 vos
 lBN
-blx
+ocv
 ocv
 nkD
 ocv
@@ -54790,7 +54698,7 @@ aeV
 tTI
 eze
 hTW
-sEC
+jNN
 ioS
 ioS
 jNN
@@ -55958,8 +55866,8 @@ sIy
 pcd
 kpm
 hnn
-nkD
-uqE
+blx
+vos
 dGA
 tVF
 xxw
