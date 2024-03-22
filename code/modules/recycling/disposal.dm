@@ -109,7 +109,7 @@
 		var/obj/item/storage/bag/trash/T = I
 		to_chat(user, "<font color=#4F49AF>You empty the bag.</font>")
 		for(var/obj/item/O in T.contents)
-			T.remove_from_storage(O,src)
+			T.obj_storage.remove(O, src)
 		T.update_icon()
 		update()
 		return
@@ -134,7 +134,7 @@
 				GM.forceMove(src)
 				GM.update_perspective()
 				for (var/mob/C in viewers(src))
-					C.show_message("<font color='red'>[GM.name] has been placed in the [src] by [user].</font>", 3)
+					C.show_message("<font color='red'>[GM.name] has been placed in \the [src] by [user].</font>", 3)
 				qdel(G)
 
 				add_attack_logs(user,GM,"Disposals dunked")
@@ -143,11 +143,11 @@
 	if(!user.attempt_insert_item_for_installation(I, src))
 		return
 
-	to_chat(user, "You place \the [I] into the [src].")
+	to_chat(user, "You place \the [I] into \the [src].")
 	for(var/mob/M in viewers(src))
 		if(M == user)
 			continue
-		M.show_message("[user.name] places \the [I] into the [src].", 3)
+		M.show_message("[user.name] places \the [I] into \the [src].", 3)
 
 	update()
 
@@ -178,11 +178,11 @@
 		return
 	if(target == user && !user.stat && CHECK_ALL_MOBILITY(user, MOBILITY_CAN_MOVE | MOBILITY_CAN_USE))	// if drop self, then climbed in
 											// must be awake, not stunned or whatever
-		msg = "[user.name] climbs into the [src]."
-		to_chat(user, "You climb into the [src].")
+		msg = "[user.name] climbs into \the [src]."
+		to_chat(user, "You climb into \the [src].")
 	else if(target != user && !user.restrained() && !user.stat && CHECK_ALL_MOBILITY(user, MOBILITY_CAN_MOVE | MOBILITY_CAN_USE))
-		msg = "[user.name] stuffs [target.name] into the [src]!"
-		to_chat(user, "You stuff [target.name] into the [src]!")
+		msg = "[user.name] stuffs [target.name] into \the [src]!"
+		to_chat(user, "You stuff [target.name] into \the [src]!")
 
 		add_attack_logs(user,target,"Disposals dunked")
 	else
@@ -467,31 +467,50 @@
 		qdel(H)
 
 /obj/machinery/disposal/throw_impacted(atom/movable/AM, datum/thrownthing/TT)
-	. = ..()
 	if(istype(AM, /obj/item) && !istype(AM, /obj/projectile))
 		if(prob(75))
 			AM.forceMove(src)
 			visible_message("\The [AM] lands in \the [src].")
+			return COMPONENT_THROW_HIT_TERMINATE
 		else
 			visible_message("\The [AM] bounces off of \the [src]'s rim!")
+			return ..()
+	return ..()
 
 /obj/machinery/disposal/CanAllowThrough(atom/movable/mover, turf/target)
 	if(istype(mover, /obj/projectile))
-		return 1
-	if (istype(mover,/obj/item) && mover.throwing)
-		var/obj/item/I = mover
-		if(istype(I, /obj/projectile))
-			return
-		if(prob(75))
-			I.forceMove(src)
-			for(var/mob/M in viewers(src))
-				M.show_message("\The [I] lands in \the [src].", 3)
-		else
-			for(var/mob/M in viewers(src))
-				M.show_message("\The [I] bounces off of \the [src]'s rim!", 3)
-		return 0
-	else
-		return ..(mover, target)
+		return TRUE
+	return ..()
+
+/obj/machinery/disposal/wall
+	name = "inset disposal unit"
+	icon_state = "wall"
+
+	density = FALSE
+
+/obj/machinery/disposal/wall/Initialize()
+	. = ..()
+
+	spawn(1 SECOND)	// Fixfix for weird interaction with buildmode or other late-spawning.
+		update()
+
+/obj/machinery/disposal/wall/update()
+	..()
+
+	switch(dir)
+		if(1)
+			pixel_x = 0
+			pixel_y = -32
+		if(2)
+			pixel_x = 0
+			pixel_y = 32
+		if(4)
+			pixel_x = -32
+			pixel_y = 0
+		if(8)
+			pixel_x = 32
+			pixel_y = 0
+
 
 // virtual disposal object
 // travels through pipes in lieu of actual items
@@ -563,6 +582,7 @@
 // movement process, persists while holder is moving through pipes
 /obj/structure/disposalholder/proc/move()
 	var/obj/structure/disposalpipe/last
+	// todo: while this is fucking awful?
 	while(active)
 		sleep(1)		// was 1
 		if(!loc) return // check if we got GC'd
@@ -570,7 +590,7 @@
 		if(hasmob && prob(3))
 			for(var/mob/living/H in src)
 				if(!istype(H,/mob/living/silicon/robot/drone)) //Drones use the mailing code to move through the disposal system,
-					H.take_overall_damage(20, 0, "Blunt Trauma")//horribly maim any living creature jumping down disposals.  c'est la vie
+					H.take_overall_damage(20, 0, weapon_descriptor = "blunt trauma")//horribly maim any living creature jumping down disposals.  c'est la vie
 
 		var/obj/structure/disposalpipe/curr = loc
 		last = curr

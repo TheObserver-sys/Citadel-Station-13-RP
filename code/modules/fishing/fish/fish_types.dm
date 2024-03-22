@@ -264,6 +264,7 @@
 	stable_population = 3
 	average_size = 20
 	average_weight = 1500
+	fillet_type = /obj/item/reagent_containers/food/snacks/meat/crab
 	favorite_bait = list(
 		/obj/item/reagent_containers/food/snacks/bait/doughball,
 	)
@@ -339,7 +340,7 @@
 /obj/item/storage/box/fish_debug
 	name = "box full of fish"
 
-/obj/item/storage/box/fish_debug/PopulateContents()
+/obj/item/storage/box/fish_debug/legacy_spawn_contents()
 	for(var/fish_type in subtypesof(/obj/item/fish))
 		new fish_type(src)
 
